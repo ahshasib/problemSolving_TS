@@ -17,6 +17,17 @@ throw new Error("Invalid type");
 
 // -----------------Problem 2 ---------------
 
+function getLength (value: string | any[]) : number {
+if (typeof value === "string"){
+    return value.length;
+}    
+else if(Array.isArray(value)){
+    return value.length
+}
+else{
+    return 0
+}
+}
 
 
-
+// -----------------Problem 3 ---------------
