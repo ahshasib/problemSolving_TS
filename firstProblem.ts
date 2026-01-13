@@ -1,4 +1,4 @@
-// -----------------Problem 1 ---------------
+// -----------------Problem 1 -----------------
 
 function formatValue(data : string | number | boolean): string | number | boolean {
 if (typeof data === "string"){
@@ -15,7 +15,7 @@ throw new Error("Invalid type");
 
 }
 
-// -----------------Problem 2 ---------------
+// -----------------Problem 2 -----------------
 
 function getLength (value: string | any[]) : number {
 if (typeof value === "string"){
@@ -30,7 +30,8 @@ else{
 }
 
 
-// -----------------Problem 3 ---------------
+// -----------------Problem 3 -----------------
+
 class Person {
     name : string
     age : number
@@ -44,4 +45,21 @@ class Person {
     }
 }
 
-// -----------------Problem 4 ---------------
+// -----------------Problem 4 -----------------
+
+type Item = {
+title : string;
+rating : number;
+}
+
+function filterByRating (items:Item[]){
+return items.filter(item => item.rating >= 4);
+}
+
+const books = [
+    { title: 'Book A', rating: 4.5 },
+    { title: 'Book B', rating: 3.2 },
+    { title: 'Book C', rating: 5.0 },
+  ];
+  
+  console.log(filterByRating(books));
