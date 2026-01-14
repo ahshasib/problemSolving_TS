@@ -90,3 +90,23 @@ function filterActiveUsers (allData: Data[]):Data[]{
 
 // -----------------Problem 6 -----------------
 
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+}
+
+const myBook: Book = {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    publishedYear: 1925,
+    isAvailable: true,
+}
+
+function printBookDetails (value:Book): void {
+    const availability = value.isAvailable ? "Yes" : "No" ;
+    console.log(`Title: ${value.title}, Author: ${value.author}, Published: ${value.publishedYear}, Available: ${availability}`)
+}
+
+printBookDetails(myBook);
