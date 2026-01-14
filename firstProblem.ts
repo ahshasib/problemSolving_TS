@@ -150,3 +150,46 @@ function getUniqueValues(
 
 
 // -----------------Problem 8 -----------------
+
+// Product interface
+interface Product {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number; 
+  }
+  
+
+  function calculateTotalPrice(products: Product[]): number {
+    
+    if (products.length === 0) {
+      return 0;
+    }
+  
+    const totalPrice = products.map((product) => {
+        
+        const basePrice = product.price * product.quantity;
+  
+       
+        if (product.discount !== undefined) {
+          const discountAmount = (basePrice * product.discount) / 100;
+          return basePrice - discountAmount;
+        }
+  
+        
+        return basePrice;
+      }).reduce((sum, current) => sum + current, 0);
+  
+    return totalPrice;
+  }
+  
+  
+  const products: Product[] = [
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+  ];
+  
+  
+  console.log(calculateTotalPrice(products));
+  
